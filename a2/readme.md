@@ -1,12 +1,12 @@
-# A2
+## A2
 ## Group Members
 - Zifan Si
 - Stanislav Serbezov
 
 ## Individual Contributions
-Both members worked together on the code, synchronization logic, testing, debugging, and overall program structure.
+Both members worked together on the code, logic, testing, debugging, and overall program structure.
 
-## Submitted File
+## File
 - `A2.c`
 
 ## Compile and Run
@@ -125,3 +125,5 @@ end fork
 stop
 @enduml
 ```
+
+
