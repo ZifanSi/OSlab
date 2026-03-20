@@ -1,3 +1,8 @@
+// This program reads logical addresses from a file,
+// finds the page number and offset,
+// uses the page table to get the frame number,
+// and prints the physical address.
+
 #include <errno.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -9,6 +14,7 @@
 
 int main(int argc, char *argv[]) {
     const char *input_path = (argc > 1) ? argv[1] : "labaddr.txt";
+    // int page_table[PAGES] = {6,4,3,7,0,1,2,5};
     unsigned int page_table[PAGES] = {6U, 4U, 3U, 7U, 0U, 1U, 2U, 5U};
     char buff[32];
     FILE *fptr = fopen(input_path, "r");

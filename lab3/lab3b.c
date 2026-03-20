@@ -1,3 +1,9 @@
+// This program opens numbers.bin,
+// maps the file into memory using mmap(),
+// copies 10 integers into an array,
+// adds them together,
+// and prints the sum.
+
 #include <fcntl.h>
 #include <stdio.h>
 #include <string.h>
