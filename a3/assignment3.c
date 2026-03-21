@@ -32,7 +32,7 @@ int findInTLB(TLBItem tlb[], int page) {
     return -1;
 }
 
-/* Step 2: add/update TLB entry */
+/* Step 2: add/update TLB entry + more helpers*/
 void addToTLB(TLBItem tlb[], int page, int frame, int *tlbPos) {
     tlb[*tlbPos].page = page;
     tlb[*tlbPos].frame = frame;
@@ -50,6 +50,26 @@ int replaceTLBEntry(TLBItem tlb[], int oldPage, int newPage, int frame) {
         }
     }
     return 0;
+}
+
+int getPageFrame(int pageTable[], int page) {
+    if (page < 0 || page >= PAGE_COUNT) return -1;
+    return pageTable[page];
+}
+
+void setPageMapping(int pageTable[], int page, int frame) {
+    if (page >= 0 && page < PAGE_COUNT) {
+        pageTable[page] = frame;
+    }
+}
+
+void invalidateTLBEntry(TLBItem tlb[], int page) {
+    for (int i = 0; i < TLB_COUNT; i++) {
+        if (tlb[i].page == page) {
+            tlb[i].valid = 0; // Mark as empty/invalid
+            tlb[i].page = -1;
+        }
+    }
 }
 
 int main(void) {
