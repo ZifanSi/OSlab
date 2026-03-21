@@ -58,11 +58,12 @@ Page_faults = 538
 TLB Hits = 54
 
 
-## workflow
+## workflow (please check file: image-2.png)
 ![alt text](image-2.png)
 
 
-## uml
+## workflow uml
+```
 @startuml
 start
 
@@ -83,3 +84,4 @@ endwhile (no)
 :Print Stats & Close;
 stop
 @enduml
+```
