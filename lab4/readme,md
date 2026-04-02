@@ -1,0 +1,3 @@
+cd lab4
+gcc -std=c11 -Wall -Wextra -pedantic main.c -o lab4
+./lab4
